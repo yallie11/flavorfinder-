@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import './styles.css'
+import Filter from './Filter';
+import recipes from './recipes';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [searchTerm, setSearchTerm] = useState('');
+	const [calorieFilter, setCalorieFilter] = useState('');
+	const [ingredientFilter, setIngredientFilter] = useState('');
+	const [allergenFilter, setAllergenFilter] = useState('');
+
+
+	return (
+		<div className="App">
+
+			<header className="App-header">
+				<h1>Food Database</h1>
+			</header>
+
+			<main>
+				<Filter
+					searchTerm={searchTerm}
+					calorieFilter={calorieFilter}
+					ingredientFilter={ingredientFilter}
+					allergenFilter={allergenFilter}
+					onSearchTermChange={setSearchTerm}
+					onCalorieFilterChange={setCalorieFilter}
+					onIngredientFilterChange={setIngredientFilter}
+					onAllergenFilterChange={setAllergenFilter}
+				/>
+
+				<div>
+					<button>Search</button>
+				</div>
+			</main>
+
+		</div>
+	);
 }
 
 export default App;
