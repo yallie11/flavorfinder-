@@ -1,23 +1,26 @@
-const recipes = [
+export const recipes = [
     {
       id: 1,
       name: 'Grilled Cheese Sandwich',
       calories: 300,
-      ingredients: ['bread', 'cheese', 'butter'],
-      allergens: ['dairy'],
+      cuisine: ['american'],
+      meal: ['lunch', 'dinner'],
+      dish: ['main course'],
     },
     {
       id: 2,
       name: 'Pasta with Tomato Sauce',
       calories: 500,
-      ingredients: ['pasta', 'tomato sauce', 'olive oil', 'garlic'],
-      allergens: [],
+      cuisine: ['italian'],
+      meal: ['lunch', 'dinner'],
+      dish: ['main course'],
     },
     {
       id: 3,
       name: 'Chicken Stir-Fry',
       calories: 700,
-      ingredients: ['chicken', 'broccoli', 'carrots', 'soy sauce'],
-      allergens: ['soy'],
+      cuisine: ['chinese'],
+      meal: ['lunch', 'dinner'],
+      dish: ['main course'],
     },
   ];
