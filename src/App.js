@@ -54,9 +54,14 @@ function App() {
 	const [filteredRecipes, setFilteredRecipes] = useState([]);
 
 	const handleSearch = () => {
-		fetch(`https://my-api-url.com/recipes?searchTerm=${searchParams.searchTerm}`)
+		fetch(`http://127.0.0.1:5000/recipes/%chicken%/%starter%/%french%/%brunch%`)
 			.then((response) => response.json())
-			.then((data) => setFilteredRecipes(data))
+			.then((data) => {
+				filteredRecipes = data.recipes[0]
+				console.log(filteredRecipes)
+				setFilteredRecipes(filteredRecipes)
+				
+			})
 			.catch((error) => console.log(error));
 	};
 
