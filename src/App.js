@@ -54,43 +54,16 @@ function App() {
 	const [filteredRecipes, setFilteredRecipes] = useState([]);
 
 	const handleSearch = () => {
-		const filteredRecipes = recipes.filter((recipe) => {
-			
-			// Filter by search term
-			if (searchParams.searchTerm && !recipe.name.toLowerCase().includes(searchParams.searchTerm.toLowerCase())) {
-				return false;
-			}
-
-			// Filter by calorie limit
-			if (searchParams.calories && recipe.calories > searchParams.calorieFilter) {
-				return false;
-			}
-			
-			// Filter by cuisine type
-			if (searchParams.cuisine && recipe.cuisine > searchParams.cuisineFilter) {
-				return false;
-			}
-
-			// Filter by meal type
-			if (searchParams.mealFilter && !recipe.meal.includes(searchParams.mealFilter)) {
-				return false;
-			}
-
-			// Filter by dish
-			if (searchParams.dishFilter && recipe.dish.indexOf(searchParams.dishFilter) === -1) {
-				return false;
-			}
-
-			return true;
-		});
-
-		setFilteredRecipes(filteredRecipes);
+		fetch(`https://my-api-url.com/recipes?searchTerm=${searchParams.searchTerm}`)
+			.then((response) => response.json())
+			.then((data) => setFilteredRecipes(data))
+			.catch((error) => console.log(error));
 	};
 
 	return (
 		<div className="App">
 
-			<Header/>
+			<Header />
 
 			<main>
 				<Filter
