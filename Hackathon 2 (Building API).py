@@ -12,8 +12,8 @@ import sqlite3
 
 app = Flask(__name__)
 
-@app.route('/recipes/<keyword>/<dish_type>/<cuisine_type>/<meal_type>', methods=['GET'])
-def get_recipes(keyword, dish_type, cuisine_type, meal_type ):
+@app.route('/recipes/<keyword>/<dish_type>/<cuisine_type>/<meal_type>/<calories>', methods=['GET'])
+def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):
     
     #connect to SQL database
     conn=sqlite3.connect('Hackathon2.db')
@@ -35,11 +35,11 @@ def get_recipes(keyword, dish_type, cuisine_type, meal_type ):
         query += " AND (MealType LIKE ?)"
         args += ('%' + meal_type + '%',)
     
-    # if calories:
-    #     query += " AND (Calories <= ?)"
-    #     args += ('%' + calories[0] + '%')
+    if calories:
+        query += " AND (Calories <= ?)"
+        args += (calories,)
 
-    if not dish_type and not cuisine_type:
+    if not dish_type and not cuisine_type and not calories :
         query += " OR (DishType LIKE ?) OR (CuisineType LIKE ?) OR (MealType LIKE ?)"
         args += ('%%', '%%', '%%')
 
