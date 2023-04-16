@@ -9,8 +9,11 @@ from flask import Flask
 import json 
 import requests
 import sqlite3
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/recipes/<keyword>/<dish_type>/<cuisine_type>/<meal_type>/<calories>', methods=['GET'])
 def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):

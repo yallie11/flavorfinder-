@@ -21,13 +21,31 @@ function Filter({
         onChange={(e) => onSearchTermChange(e.target.value)}
       />
 
-      <select value={calorieFilter} onChange={(e) => onCalorieChange(e.target.value)}>
-        <option value="">All Calories</option>
-        <option value="1000">Less than 1000</option>
-        <option value="2000">Less than 2000</option>
-        <option value="3000">Less than 3000</option>
-        <option value="4000">Less than 4000</option>
-        <option value="5000">Less than 5000</option>
+      <select
+        value={dishFilter}
+        onChange={(e) => onDishChange(e.target.value)}
+      >
+        <option value="">All Dishes</option>
+        <option value="salad">salad</option>
+        <option value="main course">main course</option>
+        <option value="egg">egg</option>
+        <option value="desserts">desserts</option>
+        <option value="soup">soup</option>
+        <option value="starter" selected>starter</option>
+        <option value="cereals">cereals</option>
+        <option value="drinks">drinks</option>
+        <option value="biscuits and cookies">biscuits and cookies</option>
+        <option value="">None</option>
+        <option value="condiments and sauces">condiments and sauces</option>
+        <option value="christmas">christmas</option>
+        <option value="special occasions">special occasions</option>
+        <option value="alcohol cocktail">alcohol cocktail</option>
+        <option value="sandwiches">sandwiches</option>
+        <option value="pancake">pancake</option>
+        <option value="halloween">halloween</option>
+        <option value="preps">preps</option>
+        <option value="thanksgiving">thanksgiving</option>
+        <option value="preserve">preserve</option>
       </select>
 
       <select
@@ -38,7 +56,7 @@ function Filter({
         <option value="italian">italian</option>
         <option value="central europe">central europe</option>
         <option value="american">american</option>
-        <option value="french">french</option>
+        <option value="french" selected>french</option>
         <option value="middle eastern">middle eastern</option>
         <option value="chinese">chinese</option>
         <option value="mediterranean">mediterranean</option>
@@ -65,37 +83,19 @@ function Filter({
         <option value="">All Meals</option>
         <option value="lunch">lunch</option>
         <option value="dinner">dinner</option>
-        <option value="brunch">brunch</option>
+        <option value="brunch" selected>brunch</option>
         <option value="snack">snack</option>
         <option value="breakfast">breakfast</option>
         <option value="teatime">teatime</option>
       </select>
 
-      <select
-        value={dishFilter}
-        onChange={(e) => onDishChange(e.target.value)}
-      >
-        <option value="">All Dishes</option>
-        <option value="salad">salad</option>
-        <option value="main course">main course</option>
-        <option value="egg">egg</option>
-        <option value="desserts">desserts</option>
-        <option value="soup">soup</option>
-        <option value="starter">starter</option>
-        <option value="cereals">cereals</option>
-        <option value="drinks">drinks</option>
-        <option value="biscuits and cookies">biscuits and cookies</option>
-        <option value="">None</option>
-        <option value="condiments and sauces">condiments and sauces</option>
-        <option value="christmas">christmas</option>
-        <option value="special occasions">special occasions</option>
-        <option value="alcohol cocktail">alcohol cocktail</option>
-        <option value="sandwiches">sandwiches</option>
-        <option value="pancake">pancake</option>
-        <option value="halloween">halloween</option>
-        <option value="preps">preps</option>
-        <option value="thanksgiving">thanksgiving</option>
-        <option value="preserve">preserve</option>
+      <select value={calorieFilter} onChange={(e) => onCalorieChange(e.target.value)}>
+        <option value="">All Calories</option>
+        <option value="1000">Less than 1000</option>
+        <option value="2000">Less than 2000</option>
+        <option value="3000">Less than 3000</option>
+        <option value="4000">Less than 4000</option>
+        <option value="5000" selected>Less than 5000</option>
       </select>
     </div>
   );

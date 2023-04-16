@@ -56,16 +56,17 @@ function App() {
 
 
 	const handleSearch = () => {
-		// `http://127.0.0.1:5000/recipes/${searchParams.searchTerm}/${searchParams.mealFilter}/${searchParams.cuisineFilter}/${searchParams.calorieFilter}`
-		fetch(`http://127.0.0.1:5000/recipes/%chicken%/%starter%/%french%/%brunch%`)
+		
+		fetch(`http://127.0.0.1:5000/recipes/${searchParams.searchTerm}/${searchParams.dishFilter}/${searchParams.cuisineFilter}/${searchParams.mealFilter}/${searchParams.calorieFilter}`)
 			.then((response) => response.json())
 			.then((data) => {
 				const _recipes = data.recipes
-				console.log(_recipes)
 				setFilteredRecipes(_recipes)
 				
 			})
-			.catch((error) => console.log(error));
+			.catch((error) =>{
+				setFilteredRecipes("")
+			}); 
 	};
 
 	return (
@@ -88,8 +89,10 @@ function App() {
 				/>
 
 				<SearchButton onClick={handleSearch} />
-
-				<RecipeResults recipes={filteredRecipes} />
+				
+				<div className="all-recipes-results">
+					<RecipeResults recipes={filteredRecipes} />
+				</div>
 
 			</main>
 
