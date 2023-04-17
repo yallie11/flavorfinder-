@@ -29,6 +29,7 @@ def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):
     if dish_type:
         query += " AND (DishType LIKE ?)"
         args += ('%' + dish_type + '%',)
+        
 
     if cuisine_type:
         query += " AND (CuisineType LIKE ?)"
@@ -41,10 +42,9 @@ def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):
     if calories:
         query += " AND (Calories <= ?)"
         args += (calories,)
+    
 
-    if not dish_type and not cuisine_type and not calories :
-        query += " OR (DishType LIKE ?) OR (CuisineType LIKE ?) OR (MealType LIKE ?)"
-        args += ('%%', '%%', '%%')
+
 
     #execute SQL query to retrieve recipes based on filters
     c.execute(query, args)

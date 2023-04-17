@@ -57,7 +57,8 @@ function App() {
 
 	const handleSearch = () => {
 		
-		fetch(`http://127.0.0.1:5000/recipes/${searchParams.searchTerm}/${searchParams.dishFilter}/${searchParams.cuisineFilter}/${searchParams.mealFilter}/${searchParams.calorieFilter}`)
+		fetch(`http://127.0.0.1:5000/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`)
+
 			.then((response) => response.json())
 			.then((data) => {
 				const _recipes = data.recipes
