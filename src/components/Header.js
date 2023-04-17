@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
     return (
         <header className="App-header">
-            <h1>FlavourFinder</h1>
+            <h1>Flavour Finder</h1>
         </header>
     )
 }

@@ -3,61 +3,74 @@ import styles from "./RecipeResults.module.css";
 import Error from "./Error";
 
 function parseArrayString(arrayString) {
-	try {
-		return JSON.parse(arrayString.replace(/'/g, '"')) || [];
-	} catch (error) {
-		return [];
-	}
+  try {
+    return JSON.parse(arrayString.replace(/'/g, '"')) || [];
+  } catch (error) {
+    return [];
+  }
 }
 
 function RecipeResults({ recipes }) {
+  console.log(recipes);
 
+  if (recipes == "") {
+    return <Error />;
+  }
 
-	console.log(recipes)
+  return (
+    <div>
+      {recipes.map((recipe, index) => {
+        const cuisineType = parseArrayString(recipe.CuisineType);
+        const dishType = parseArrayString(recipe.DishType);
 
-	if (recipes == "") {
-		return (
-			<Error />
-		);
-	}
+        return (
+          <div key={index} className={styles.recipe}>
+            <h2>{recipe.Name}</h2>
 
-	return (
-		<div>
-			{recipes.map((recipe, index) => {
-				const cuisineType = parseArrayString(recipe.CuisineType);
-				const dishType = parseArrayString(recipe.DishType);
+            <div className={styles.recipeInfo}>
+              <div className={styles.results}>
+                <div>
+                  Calories
+                  <span> {parseFloat(recipe.Calories)}</span>
+                </div>
+                <div>
+                  Cook Time(min)
+                  <span>
+                    {" "}
+                    {parseFloat(recipe.CookTime) !== 0
+                      ? recipe.CookTime
+                      : "N/A"}
+                  </span>
+                </div>
+                <div>
+                  Cuisine Type
+                  <span>
+                    {" "}
+                    {Array.isArray(cuisineType)
+                      ? cuisineType.join(", ")
+                      : cuisineType}
+                  </span>
+                </div>
+                <div>
+                  Dish Type
+                  <span>
+                    {" "}
+                    {Array.isArray(dishType) ? dishType.join(", ") : dishType}
+                  </span>
+                </div>
+				<div>
+					<a href={recipe.url} target="_blank">
+					Link to Recipe 🍽
+					</a>
+				</div>
+              </div>
 
-				return (
-					<div key={index} className={styles.recipe}>
-						<h2>{recipe.Name}</h2>
-
-						<div className={styles.recipeInfo}>
-									<div className={styles.results}>
-										<div>
-											Calories
-											<span> {parseFloat(recipe.Calories)}</span>
-										</div>
-										<div>      
-										    CookTime(min)
-                                            <span> {parseFloat(recipe.CookTime) !== 0 ? recipe.CookTime : 'N/A'}</span>	
-										</div>
-										<div>
-											CuisineType
-											<span> {Array.isArray(cuisineType) ? cuisineType.join(', ') : cuisineType}</span>
-										</div>
-										<div>
-											DishType
-											<span> {Array.isArray(dishType) ? dishType.join(', ') : dishType}</span>
-								</div>
-							</div>
-
-							<div><a href={recipe.url} target="_blank">{recipe.url}</a></div>
-						</div>
-					</div>
-				);
-			})}
-		</div>
-	);
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default RecipeResults;
