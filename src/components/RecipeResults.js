@@ -37,9 +37,9 @@ function RecipeResults({ recipes }) {
 											Calories
 											<span> {parseInt(recipe.Calories)}</span>
 										</div>
-										<div>
-											CookTime
-											<span> {recipe.CookTime}</span>
+										<div>      
+										    CookTime
+                                            <span> {parseFloat(recipe.CookTime) !== 0 ? recipe.CookTime : 'N/A'}</span>	
 										</div>
 										<div>
 											CuisineType
