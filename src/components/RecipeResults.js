@@ -38,7 +38,7 @@ function RecipeResults({ recipes }) {
 											<span> {parseFloat(recipe.Calories)}</span>
 										</div>
 										<div>      
-										    CookTime
+										    CookTime(min)
                                             <span> {parseFloat(recipe.CookTime) !== 0 ? recipe.CookTime : 'N/A'}</span>	
 										</div>
 										<div>
