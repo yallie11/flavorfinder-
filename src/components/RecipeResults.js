@@ -35,7 +35,7 @@ function RecipeResults({ recipes }) {
 									<div className={styles.results}>
 										<div>
 											Calories
-											<span> {parseInt(recipe.Calories)}</span>
+											<span> {parseFloat(recipe.Calories)}</span>
 										</div>
 										<div>      
 										    CookTime

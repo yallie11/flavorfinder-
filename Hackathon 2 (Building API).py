@@ -23,7 +23,7 @@ def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):
     c = conn.cursor()
 
     #build SQL query based on filters
-    query = "SELECT Name, Image, Calories, CuisineType, MealType, DishType, CookTime, Ingredients, url FROM Recipes WHERE Name LIKE ?"
+    query = "SELECT Name, Image, ROUND(Calories,0), CuisineType, MealType, DishType, CookTime, Ingredients, url FROM Recipes WHERE Name LIKE ?"
     args = ('%' + keyword + '%',) 
 
     if dish_type:
