@@ -5,6 +5,7 @@ import Filter from './components/Filter';
 import SearchButton from './components/SearchButton';
 import Header from './components/Header';
 import RecipeResults from './components/RecipeResults';
+import ThemeSwitcher from './components/ThemeSwitcher';
 import { recipes } from './recipes';
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
 		<div className="App">
 
 			<Header />
+			<ThemeSwitcher />
 
 			<main>
 				<Filter
