@@ -7,7 +7,7 @@ const lightTheme = {
     '--tertiary-color': '#30505c',
     '--ternery-color': '#fae7b2',
     '--text-color': '#aaa',
-    '--border-color': '#aaa',
+    '--border-color': '#fff',
     '--link-color': '#80d4ff',
     '--link-hover-color': '#58b2d6',
     '--app-black': '#0D2326',

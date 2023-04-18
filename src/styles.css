@@ -1,5 +1,4 @@
 
-
 html {
   box-sizing: border-box;
 }
@@ -11,7 +10,8 @@ html {
 }
 
 body {
-  background-color: var(--primary-color);
+  background: url('./assets/bg.png') no-repeat center center fixed, var(--primary-color);
+  background-size: cover;
   color: var(--app-black);
 }
 
@@ -39,7 +39,7 @@ select {
   border-radius: 5px;
   margin-bottom: 20px;
   font-size: 16px;
-  background-color: var(--secondary-color);
+  background-color: var(--border-color);
   color: var(--app-black);
 }
 
