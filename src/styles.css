@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-color: #b2dee4;
   --secondary-color: #ffa102;
   --tertiary-color: #30505c;
@@ -9,6 +9,19 @@
   --link-hover-color: #58b2d6;
   --app-black: #0D2326;
   --app-white: #FFECCC;
+} */
+
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #669966;
+  --tertiary-color: #30505c;
+  --ternery-color: #9baf86;
+  --text-color: #aaa;
+  --border-color: #aaa;
+  --link-color: #80d4ff;
+  --link-hover-color: #58b2d6;
+  --app-black: #eaf1fa;
+  --app-white: #575757;
 }
 
 html {
@@ -55,7 +68,7 @@ select {
 }
 
 button {
-  background-color: #61dafb;
+  background-color: var(--secondary-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -65,7 +78,7 @@ button {
 }
 
 button:hover {
-  background-color: #00a3c8;
+  background-color: var(--primary-color);
 }
 
 h1 {

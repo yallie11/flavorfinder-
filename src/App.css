@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 
-:root {
+/* :root {
   --primary-color: #b2dee4;
   --secondary-color: #ffa102;
   --tertiary-color: #30505c;
@@ -10,6 +10,21 @@
   --border-color: #aaa;
   --link-color: #80d4ff;
   --link-hover-color: #58b2d6;
+  --app-black: #0D2326;
+  --app-white: #FFECCC;
+} */
+
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #669966;
+  --tertiary-color: #30505c;
+  --ternery-color: #9baf86;
+  --text-color: #aaa;
+  --border-color: #aaa;
+  --link-color: #80d4ff;
+  --link-hover-color: #58b2d6;
+  --app-black: #eaf1fa;
+  --app-white: #575757;
 }
 
 .App {
@@ -34,8 +49,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #000000;
-  font-family: 'Courgette', cursive;
+  color: var(--app-black);
+  font-family: "Courgette", cursive;
 }
 
 .App-link {
