@@ -71,9 +71,15 @@ function App() {
 				setFilteredRecipes("")
 			}); 
 	};
+	
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter') {
+			handleSearch();
+		}
+	}
 
 	return (
-		<div className="App">
+		<div className="App" onKeyDown={handleKeyDown}>
 
 			<Header />
 			<ThemeSwitcher />
@@ -105,4 +111,3 @@ function App() {
 }
 
 export default App;
-
