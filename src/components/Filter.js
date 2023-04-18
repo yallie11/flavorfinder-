@@ -90,7 +90,6 @@ function Filter({
       </select>
 
       <select value={calorieFilter} onChange={(e) => onCalorieChange(e.target.value)}>
-        <option value="">All Calories</option>
         <option value="1000">Less than 1000</option>
         <option value="2000">Less than 2000</option>
         <option value="3000">Less than 3000</option>
