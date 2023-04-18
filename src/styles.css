@@ -10,6 +10,10 @@ html {
 }
 
 body {
+  background-image: url('./assets/bg-dark.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-color: var(--primary-color);
   background-size: cover;
   color: var(--app-black);

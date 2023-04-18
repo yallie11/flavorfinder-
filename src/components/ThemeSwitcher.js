@@ -3,8 +3,8 @@ import "./ThemeSwitcher.css";
 
 const lightTheme = {
   "--background-image": "url('./assets/bg.png')",
-  "--primary-color": "#b2dee4",
-  "--secondary-color": "#ffa102",
+  "--primary-color": "#FEFDEC",
+  "--secondary-color": "#D43A27",
   "--tertiary-color": "#30505c",
   "--ternery-color": "#fae7b2",
   "--text-color": "#aaa",
@@ -16,9 +16,9 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  "--background-image": "none",
+  "--background-image": "url('./assets/bg-dark.png')",
   "--primary-color": "#1a1a1a",
-  "--secondary-color": "#669966",
+  "--secondary-color": "#ffa102",
   "--tertiary-color": "#30505c",
   "--ternery-color": "#9baf86",
   "--text-color": "#aaa",
@@ -27,7 +27,6 @@ const darkTheme = {
   "--link-hover-color": "#58b2d6",
   "--app-black": "#eaf1fa",
   "--app-white": "#575757",
-  "--background-image": "none",
 };
 
 const ThemeSwitcher = () => {
