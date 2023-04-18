@@ -8,9 +8,10 @@ import RecipeResults from './components/RecipeResults';
 import { recipes } from './recipes';
 
 function App() {
+	const [recipes, setRecipes] = useState([]);
 	const [searchParams, setSearchParams] = useState({
 		searchTerm: '',
-		calorieFilter: '',
+		calorieFilter: '5000',
 		cuisineFilter: '',
 		mealFilter: '',
 		dishFilter: '',
