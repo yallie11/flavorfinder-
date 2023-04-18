@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import './ThemeSwitcher.css';
+import React, { useState, useEffect } from "react";
+import "./ThemeSwitcher.css";
 
 const lightTheme = {
-    '--primary-color': '#b2dee4',
-    '--secondary-color': '#ffa102',
-    '--tertiary-color': '#30505c',
-    '--ternery-color': '#fae7b2',
-    '--text-color': '#aaa',
-    '--border-color': '#fff',
-    '--link-color': '#80d4ff',
-    '--link-hover-color': '#58b2d6',
-    '--app-black': '#0D2326',
-    '--app-white': '#FFECCC'
+  "--background-image": "url('./assets/bg.png')",
+  "--primary-color": "#b2dee4",
+  "--secondary-color": "#ffa102",
+  "--tertiary-color": "#30505c",
+  "--ternery-color": "#fae7b2",
+  "--text-color": "#aaa",
+  "--border-color": "#fff",
+  "--link-color": "#80d4ff",
+  "--link-hover-color": "#58b2d6",
+  "--app-black": "#0D2326",
+  "--app-white": "#FFECCC",
 };
 
 const darkTheme = {
-    '--primary-color': '#1a1a1a',
-    '--secondary-color': '#669966',
-    '--tertiary-color': '#30505c',
-    '--ternery-color': '#9baf86',
-    '--text-color': '#aaa',
-    '--border-color': '#aaa',
-    '--link-color': '#80d4ff',
-    '--link-hover-color': '#58b2d6',
-    '--app-black': '#eaf1fa',
-    '--app-white': '#575757'
+  "--background-image": "none",
+  "--primary-color": "#1a1a1a",
+  "--secondary-color": "#669966",
+  "--tertiary-color": "#30505c",
+  "--ternery-color": "#9baf86",
+  "--text-color": "#aaa",
+  "--border-color": "#aaa",
+  "--link-color": "#80d4ff",
+  "--link-hover-color": "#58b2d6",
+  "--app-black": "#eaf1fa",
+  "--app-white": "#575757",
+  "--background-image": "none",
 };
 
 const ThemeSwitcher = () => {
@@ -35,6 +38,13 @@ const ThemeSwitcher = () => {
     for (const key in theme) {
       document.documentElement.style.setProperty(key, theme[key]);
     }
+
+    // Toggle the CSS class for the light theme on the body element
+    if (darkMode) {
+      document.body.classList.remove("body-light-theme");
+    } else {
+      document.body.classList.add("body-light-theme");
+    }
   }, [darkMode]);
 
   const toggleTheme = () => {
@@ -42,7 +52,7 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <div className='switch'>
+    <div className="switch">
       <label>
         Dark Mode
         <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
@@ -52,4 +62,3 @@ const ThemeSwitcher = () => {
 };
 
 export default ThemeSwitcher;
-

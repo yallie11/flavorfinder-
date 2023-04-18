@@ -10,10 +10,19 @@ html {
 }
 
 body {
-  background: url('./assets/bg.png') no-repeat center center fixed, var(--primary-color);
+  background-color: var(--primary-color);
   background-size: cover;
   color: var(--app-black);
 }
+
+.body-light-theme {
+  background-image: url('./assets/bg.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 
 main {
   max-width: 800px;
