@@ -20,7 +20,7 @@ body {
 }
 
 .body-light-theme {
-  background-image: url('./assets/bg.png');
+  background-image: url('./assets/bg-light.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -58,7 +58,9 @@ select {
 
 button {
   background-color: var(--secondary-color);
-  color: #fff;
+  border: 2px solid var(--app-black);
+  border-radius: 5px;
+  color: #000000;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;

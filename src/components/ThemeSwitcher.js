@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ThemeSwitcher.css";
 
 const lightTheme = {
-  "--background-image": "url('./assets/bg.png')",
+  "--background-image": "url('./assets/bg-light.png')",
   "--primary-color": "#FEFDEC",
   "--secondary-color": "#D43A27",
   "--tertiary-color": "#30505c",
