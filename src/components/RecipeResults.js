@@ -30,7 +30,7 @@ function RecipeResults({ recipes }) {
             <div className={styles.recipeInfo}>
               <div className={styles.results}>
                 <div>
-                  Calories
+                  Calories(All Servings)
                   <span> {parseFloat(recipe.Calories)}</span>
                 </div>
                 <div>
