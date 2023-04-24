@@ -26,7 +26,7 @@ function Filter({
         onChange={(e) => onDishChange(e.target.value)}
       >
         <option value="">All Dishes</option>
-        <option value="salads">salad</option>
+        <option value="salad">salad</option>
         <option value="main course">main course</option>
         <option value="egg">egg</option>
         <option value="desserts">desserts</option>
