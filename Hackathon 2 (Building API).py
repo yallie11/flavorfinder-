@@ -18,11 +18,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 from flask import request
 
-@app.before_request
-def log_request_info():
-    app.logger.info('Request Headers: %s', request.headers)
-    app.logger.info('Request Body: %s', request.get_data())
-
 
 @app.route('/recipes/<keyword>/<dish_type>/<cuisine_type>/<meal_type>/<calories>', methods=['GET'])
 def get_recipes(keyword, dish_type, cuisine_type, meal_type, calories ):
