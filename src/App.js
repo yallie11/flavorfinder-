@@ -1,4 +1,3 @@
-User
 import React, { useState } from 'react';
 import './App.css';
 import './styles.css'
@@ -59,7 +58,7 @@ function App() {
 
 
 	const handleSearch = () => {
-		fetch(`https://flavourfinderbackend.herokuapp.com/api/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`)
+		fetch(`https://flavourfinderbackend.herokuapp.com/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`)
 			.then((response) => response.json())
 			.then((data) => {
 				const _recipes = data.recipes;
