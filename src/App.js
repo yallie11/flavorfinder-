@@ -56,19 +56,23 @@ function App() {
 	const [filteredRecipes, setFilteredRecipes] = useState([]);
 
 
+const handleSearch = () => {
+  const url = `https://flavourfinderbackend.herokuapp.com/api/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`;
 
-	const handleSearch = () => {
-		fetch(`https://flavourfinderbackend.herokuapp.com/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`)
-			.then((response) => response.json())
-			.then((data) => {
-				const _recipes = data.recipes;
-				setFilteredRecipes(_recipes);
-			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-	};
-	
+  console.log('Fetching from URL:', url);
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const _recipes = data.recipes;
+      console.log('Received data:', _recipes);
+      setFilteredRecipes(_recipes);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+};
+
 	
 	const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {
