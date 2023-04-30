@@ -58,7 +58,10 @@ function App() {
 
 
 	const handleSearch = () => {
-		fetch(`https://flavourfinderbackend.herokuapp.com/recipes/${searchParams.searchTerm ? `%${searchParams.searchTerm}%` : '%%'}/${searchParams.dishFilter ? `%${searchParams.dishFilter}%` : '%%'}/${searchParams.cuisineFilter ? `%${searchParams.cuisineFilter}%` : '%%'}/${searchParams.mealFilter ? `%${searchParams.mealFilter}%` : '%%'}/${searchParams.calorieFilter}`)
+		
+		const url = `https://flavourfinderbackend.herokuapp.com/recipes/${searchParams.searchTerm ? `${searchParams.searchTerm}` : '%%'}/${searchParams.dishFilter ? `${searchParams.dishFilter}` : '%%'}/${searchParams.cuisineFilter ? `${searchParams.cuisineFilter}` : '%%'}/${searchParams.mealFilter ? `${searchParams.mealFilter}` : '%%'}/${searchParams.calorieFilter}`
+		
+		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
 				const _recipes = data.recipes;
