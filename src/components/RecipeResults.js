@@ -59,7 +59,7 @@ function RecipeResults({ recipes }) {
                   </span>
                 </div>
 				<div>
-					<a href={recipe.url} target="_blank">
+					<a href={recipe.url} target="_blank" rel="noreferrer">
 					Link to Recipe 🍽
 					</a>
 				</div>
