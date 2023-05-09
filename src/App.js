@@ -60,6 +60,8 @@ function App() {
 	const handleSearch = () => {
 		
 		const url = `https://flavourfinderbackend.herokuapp.com/recipes/${searchParams.searchTerm ? `${searchParams.searchTerm}` : '%%'}/${searchParams.dishFilter ? `${searchParams.dishFilter}` : '%%'}/${searchParams.cuisineFilter ? `${searchParams.cuisineFilter}` : '%%'}/${searchParams.mealFilter ? `${searchParams.mealFilter}` : '%%'}/${searchParams.calorieFilter}`
+
+		console.log(url)
 		
 		fetch(url)
 			.then((response) => response.json())

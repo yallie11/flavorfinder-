@@ -11,7 +11,6 @@ function parseArrayString(arrayString) {
 }
 
 function RecipeResults({ recipes }) {
-  console.log(recipes);
 
   if (recipes === "") {
     return <Error />;
